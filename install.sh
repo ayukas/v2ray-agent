@@ -494,7 +494,7 @@ allowPort() {
 }
 # 获取公网IP
 getPublicIP() {
-    local type=4
+    local type=6
     if [[ -n "$1" ]]; then
         type=$1
     fi
@@ -1020,7 +1020,7 @@ installWarp() {
 checkDNSIP() {
     local domain=$1
     local dnsIP=
-    local type=4
+    local type=6
     dnsIP=$(dig @1.1.1.1 +time=1 +short "${domain}")
     if echo "${dnsIP}" | grep -q "timed out" || [[ -z "${dnsIP}" ]]; then
         echo
