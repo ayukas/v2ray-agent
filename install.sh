@@ -1058,7 +1058,7 @@ checkPortOpen() {
     touch ${nginxConfigPath}checkPortOpen.conf
     cat <<EOF >${nginxConfigPath}checkPortOpen.conf
     server {
-        listen ${port};
+       # listen ${port};
         listen [::]:${port};
         server_name ${domain};
         location /checkPort {
