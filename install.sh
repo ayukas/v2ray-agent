@@ -1077,8 +1077,8 @@ EOF
     handleNginx start
 
     # 检查域名+端口的开放
-    checkPortOpenResult=$(curl -s -m 2 "http://${domain}:${port}/checkPort")
-    localIP=$(curl -s -m 2 "http://${domain}:${port}/ip")
+    checkPortOpenResult=$(curl -6 -s -m 2 "http://${domain}:${port}/checkPort")
+    localIP=$(curl -6 -s -m 2 "http://${domain}:${port}/ip")
 
     rm "${nginxConfigPath}checkPortOpen.conf"
     handleNginx stop
